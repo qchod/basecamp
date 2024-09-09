@@ -70,7 +70,7 @@ public class PartnerCampingCarController {
     @RequestMapping("loginProcess")
     public String loginProcess() {
 
-        return "redirect:https://basecamp.null-pointer-exception.com/partner/partnerDashboard";
+        return "redirect:https://basecamp.null-pointer-exception.com/seller/login";
     }
     // 판매자 로그아웃 
     @RequestMapping("logoutProcess")
@@ -138,7 +138,7 @@ public class PartnerCampingCarController {
 
         partnerCampingCarService.registerCamping(campingcarDto,basicFacilites_id,detailedImg,rentalPeakPriceDto);
         System.out.println("차량등록 : " +campingcarDto+basicFacilites_id+detailedImg+rentalPeakPriceDto);
-        return "redirect:https://basecamp.null-pointer-exception.com/partner/carManagement";
+        return "redirect:https://basecamp.null-pointer-exception.com/partner/carRegister";
     }
     
     @RequestMapping("carManagement") 
@@ -167,7 +167,7 @@ public class PartnerCampingCarController {
     
         partnerCampingCarService.updateReservationProgress(reservationDto);
     
-        return "redirect::https://basecamp.null-pointer-exception.com/partner/bookReservation";
+        return "redirect:https://basecamp.null-pointer-exception.com/partner/bookReservation";
     }
 
     @RequestMapping("reviewManage")
