@@ -97,7 +97,7 @@
                                         <button class="btn btn-bc-light btn-sm" th:if="${rentalManageMetnData.progress == '예약승인'}">대여 승인</button>
                                     
                                         <!-- 대여 동의 완료 버튼: 항상 표시되도록 변경 -->
-                                        <button class="btn btn-bc-light btn-sm" th:unless="${rentalManageMetnData.progress == '예약승인'}">동의 완료</button>
+                                        <button class="btn btn-bc-dark btn-sm" th:if="${rentalManageMetnData.progress != '예약승인'}">동의 완료</button>
                                     </form>
                                 </div>
                                 <div class="col-1 ps-0 pe-4 d-flex justify-content-center align-items-center">메모</div>

@@ -88,7 +88,7 @@
                                     <!-- 반납 -->
                                     <input type="hidden" name="progress" value="반납동의요청">
                                     <input type="hidden" name="id" th:value="${returnManageData.reservation_id}">
-                                    <button class="btn btn-bc-light" th:if="${returnManageData.progress == '반납요청'}" formaction="/partner/reservation_approved">반납 요청</button>
+                                    <button class="btn btn-bc-light btn-sm" th:if="${returnManageData.progress == '반납요청'}" formaction="/partner/reservation_approved">반납 요청</button>
                                     <button class="btn btn-bc-light btn-sm" th:if="${returnManageData.progress == '반납동의요청'}">반납동의요청</button>
                                     <button class="btn btn-secondary btn-sm" th:if="${returnManageData.progress == '반납완료'}">반납완료</button>
                                     </form>

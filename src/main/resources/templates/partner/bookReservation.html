@@ -99,7 +99,7 @@
                                     <input type="hidden" name="progress" value="예약승인">
                                     <input type="hidden" name="id" th:value="${bookReservationData.id}">
                                     <button class="btn btn-bc-light btn-sm" th:if="${bookReservationData.progress == '예약접수'}" formaction="/partner/reservation_approved">예약 승인</button>
-                                    <button class="btn btn-bc-light btn-sm" th:if="${bookReservationData.progress != '예약접수'}">승인 완료</button>
+                                    <button class="btn btn-bc-dark btn-sm" th:if="${bookReservationData.progress != '예약접수'}">승인 완료</button>
                                 </div>
                                 <div class="col-1 px-0 d-flex justify-content-center align-items-center text-center"><a href="#" class="text-primary">다운로드</a></div>
                             </form>
