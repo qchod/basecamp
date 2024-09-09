@@ -15,3 +15,4 @@ public class RentalReview {
     private Date reply_date;
 
 }
+                          
