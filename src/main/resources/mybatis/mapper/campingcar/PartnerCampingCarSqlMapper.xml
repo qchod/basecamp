@@ -288,7 +288,7 @@
     <!-- 판매자 : 리뷰 관리의 답글 -->
     <update id="reivewReplyContentByReviewId">
         UPDATE bc_rental_review
-        set reply_content = #{reply_content}
+        set reply_content = #{reply_content}, reply_date = NOW()
         where id= #{id}
     </update>
 

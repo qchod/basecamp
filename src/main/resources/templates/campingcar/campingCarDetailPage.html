@@ -234,14 +234,14 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid fixed-top overflow-x-hidden" style="height: 49px;">
+    <div class="container-fluid fixed-top overflow-x-hidden" style="height: 3.0625rem;">
         <div class="row bg-white align-items-center py-2 border-bottom">
-            <div class="col-auto px-0 pe-1">
+            <div class="col-2 px-0">
                 <button class="border-0 bg-transparent d-flex align-items-center text-dark">
                     <span class="material-symbols-outlined" onclick="history.back();" style="cursor: pointer;">arrow_back</span>
                 </button>
             </div>
-            <div class="col-9 ps-4 text-center">
+            <div class="col-9 text-center pe-5">
                 <div class="mb-0 fw-semibold" style="font-size: 16px;">상세정보</div>
             </div>
         </div>
@@ -391,7 +391,7 @@
             </div>
         </div>
 
-        <div class="section sticky-top mb-0 border-0 py-0 overflow-x-hidden" style="z-index: 1040; top: 42px;">
+        <div class="section sticky-top mb-0 border-0 py-0 overflow-x-hidden" style="z-index: 1040; top: 2.5rem;">
             <nav class="row pb-0 border-bottom nav nav-underline">
                 <div class="col-4 text-center">
                     <a class="fw-semibold nav-link" href="#rules">이용규정</a>
@@ -910,46 +910,53 @@
                 <!--리뷰 리스트-->
                 <div class="row pt-2" th:each="reviewList : ${reviewData}">
                     <div class="col">
-                        <!--리뷰 리스트: 후기 쓴 사용자 별점,리뷰 쓴 시간-->
+                        <!--리뷰 리스트: 후기 쓴 사용자 별점, 리뷰 쓴 시간-->
                         <div class="row d-flex justify-content-between">
                             <div class="col-8 fw-semibold">
                                 <i class="bi bi-star-fill" style="color: #FFD700;"></i>
                                 <span class="new-fs-85" th:text="${reviewList.rate}+'점'"></span> 
                             </div>
                         </div>
+                
                         <!--리뷰 리스트: 후기 내용-->
                         <div class="row pt-1">
                             <div class="col">
-                                <span th:text="${reviewList.content}" style="word-wrap: break-word;font-size: 14px;"></span>
+                                <!-- 후기 내용은 항상 출력 -->
+                                <span th:text="${reviewList.content}" style="word-wrap: break-word; font-size: 14px;"></span>
                             </div>
                         </div>
-
+                
                         <!--리뷰 리스트: 후기 쓴 사용자 이미지와 닉네임-->
-                        <div class="row border-bottom">
-                            <div class="col pb-2">
+                        <div class="row">
+                            <div class="col pt-0">
                                 <span class="fw-semibold new-fs-7" th:text="${reviewList.nickname}" style="color: #7C7B7B;"></span> 
                                 <span class="fw-semibold new-fs-7 createdAt" th:text="${#dates.format(reviewList.created_at, 'yyyy.MM.dd HH:mm')}" style="color: #7C7B7B;"></span>
                                 <span class="ms-auto new-fs-7">신고</span>
                             </div>
                         </div>
-                        <div class="row">
+                
+                        <!-- 판매자 답글이 있는 경우 -->
+                        <div class="row border-bottom pb-3"  th:if="${reviewList['reply_content'] != null}">
                             <div class="col">
-                                <!-- 판매자 정보 -->
                                 <div class="d-flex align-items-center mt-3">
-                                    <img th:src="|/images/${campingcarDetails.campingcarDto.comp_profile_image}|" class="rounded-circle me-1" style="width: 1.75rem;height: 1.65rem;">
+                                    <img th:src="|/images/${campingcarDetails.campingcarDto.comp_profile_image}|" class="rounded-circle me-1" style="width: 1.75rem; height: 1.65rem;">
                                     <span class="fw-semibold new-fs-85" th:text="${campingcarDetails.campingcarDto.comp_name}"></span>
                                     <span class="ms-2 new-fs-85" th:text="${#dates.format(reviewList.reply_date, 'yyyy.MM.dd HH:mm')}" style="color: #7C7B7B;"></span>
                                     <a href="#" class="ms-auto new-fs-85" style="font-size: 12px;">신고</a>
                                 </div>
-                        
-                                <!-- 판매자 답글 내용 (말풍선 스타일 적용) -->
+                
+                                <!-- 판매자 답글 내용 -->
                                 <div class="speech-bubble mt-3 p-3 bg-light border rounded" style="white-space: pre-wrap;" th:text="${reviewList.reply_content}">
                                     <!-- 답글 내용 -->
                                 </div>
                             </div>
                         </div>
+                
+                        <!-- 판매자 답글이 없는 경우 -->
+                        <div class="row mt-3" th:unless="${reviewList['reply_content'] != null}">
+                        </div>
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>
