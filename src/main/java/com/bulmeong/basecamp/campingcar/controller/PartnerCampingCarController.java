@@ -70,7 +70,7 @@ public class PartnerCampingCarController {
     @RequestMapping("loginProcess")
     public String loginProcess() {
 
-        return "redirect:https://basecamp.null-pointer-exception.com/seller/partnerDashboard";
+        return "redirect:https://basecamp.null-pointer-exception.com/partner/partnerDashboard";
     }
     // 판매자 로그아웃 
     @RequestMapping("logoutProcess")
