@@ -64,7 +64,7 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
 
     // sessionUserInfo가 null이면 로그인 페이지로 리다이렉트
     if (sessionUserInfo == null) {
-        return "redirect:/user/login";  // 로그인 페이지로 리다이렉트
+        return "redirect:https://basecamp.null-pointer-exception.com/user/login";  // 로그인 페이지로 리다이렉트
     }
 
     // 유저가 로그인한 경우 rentUserPk 조회 (null일 수 있음)
@@ -335,6 +335,7 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
         }
         String newName = todayPath + filename;
         return newName;
+
     }
 
     // 차량 반납 요청 페이지
@@ -353,7 +354,7 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
         campingcarService.reservationApproved(reservationDto);
         System.out.println("id확인 " + reservationDto.getId());
     
-        return "redirect:/campingcar/rentalCarCheck?id="+reservationDto.getId();
+        return "redirect:https://basecamp.null-pointer-exception.com/campingcar/rentalCarCheck?id="+reservationDto.getId();
     }
 
     // 차량 반납 점검 동의 페이지

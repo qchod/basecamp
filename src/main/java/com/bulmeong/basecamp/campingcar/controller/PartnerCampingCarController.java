@@ -70,7 +70,7 @@ public class PartnerCampingCarController {
     @RequestMapping("loginProcess")
     public String loginProcess() {
 
-        return "redirect:https://basecamp.null-pointer-exception.com/seller/login";
+        return "redirect:https://basecamp.null-pointer-exception.com/seller/partnerDashboard";
     }
     // 판매자 로그아웃 
     @RequestMapping("logoutProcess")
@@ -138,7 +138,7 @@ public class PartnerCampingCarController {
 
         partnerCampingCarService.registerCamping(campingcarDto,basicFacilites_id,detailedImg,rentalPeakPriceDto);
         System.out.println("차량등록 : " +campingcarDto+basicFacilites_id+detailedImg+rentalPeakPriceDto);
-        return "redirect:https://basecamp.null-pointer-exception.com/partner/carRegister";
+        return "redirect:https://basecamp.null-pointer-exception.com/partner/carManagement";
     }
     
     @RequestMapping("carManagement") 
@@ -167,7 +167,7 @@ public class PartnerCampingCarController {
     
         partnerCampingCarService.updateReservationProgress(reservationDto);
     
-        return "redirect:/partner/bookReservation";
+        return "redirect::https://basecamp.null-pointer-exception.com/partner/bookReservation";
     }
 
     @RequestMapping("reviewManage")
@@ -264,7 +264,7 @@ public class PartnerCampingCarController {
         System.out.println("반납 이미지 업로드 확인 "+ returnExternalInspectionDto);
 
         model.addAttribute("message", "파일이 성공적으로 업로드되었습니다.");
-    return "redirect:/partner/returnManagement";
+    return "redirect:https://basecamp.null-pointer-exception.com/partner/returnManagement";
     }
 
     // 차량 반납 이미지 업로드를 위한 이미지 메소드
