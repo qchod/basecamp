@@ -148,7 +148,7 @@
                             <div class="col-2">
                                 <span class="badge text-dark fw-normal rounded-pill new-fs-85">대여일</span>
                             </div>
-                            <div class="col-10 ps-4 ms-2 d-flex justify-center align-items-center">
+                            <div class="col-auto ps-4 ms-2 d-flex justify-center align-items-center">
                                 <span class="new-fs-85" th:text="${#dates.format(rentuserHistoryList.get('reservationStart_date'), 'yyyy.MM.dd a HH:mm')}"></span>
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                             <div class="col-2">
                                 <span class="badge text-dark fw-normal rounded-pill new-fs-85">반납일</span>
                             </div>
-                            <div class="col-12 ps-4 ms-2 d-flex justify-center align-items-center">
+                            <div class="col-auto ps-4 ms-2 d-flex justify-center align-items-center">
                                 <div class="new-fs-85" th:text="${#dates.format(rentuserHistoryList.get('reservationEnd_date'), 'yyyy.MM.dd a HH:mm')}"></div>
                             </div>
                         </div>
