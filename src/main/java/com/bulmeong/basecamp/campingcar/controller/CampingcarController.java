@@ -29,6 +29,7 @@ import com.bulmeong.basecamp.campingcar.dto.RentalReview;
 import com.bulmeong.basecamp.campingcar.dto.ReservationDto;
 import com.bulmeong.basecamp.campingcar.service.CampingcarService;
 import com.bulmeong.basecamp.campingcar.service.PartnerCampingCarService;
+import com.bulmeong.basecamp.common.util.ImageUtil;
 import com.bulmeong.basecamp.user.dto.UserDto;
 
 import jakarta.servlet.http.HttpSession;
@@ -160,7 +161,7 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
         int userPk = sessionUserInfo.getId();
         rentUser.setUser_id(userPk);
 
-        String basecamp_rentUser = rentalShoot(driveImage);
+        String basecamp_rentUser = ImageUtil.saveImageAndReturnLocation(driveImage);
         
         rentUser.setDriver_license_image(basecamp_rentUser);
 
@@ -284,12 +285,12 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
                                     @RequestParam("driver_front_view") MultipartFile driverFrontView,
                                     Model model) {
 
-        String frontViewImg = rentalShoot(frontView);
-        String passengerFrontViewImg = rentalShoot(passengerFrontView);
-        String passengerRearViewImg = rentalShoot(passengerRearView);
-        String rearViewImg = rentalShoot(rearView);
-        String driverRearViewImg = rentalShoot(driverRearView);
-        String driverFrontViewImg = rentalShoot(driverFrontView);
+        String frontViewImg = ImageUtil.saveImageAndReturnLocation(frontView);
+        String passengerFrontViewImg = ImageUtil.saveImageAndReturnLocation(passengerFrontView);
+        String passengerRearViewImg = ImageUtil.saveImageAndReturnLocation(passengerRearView);
+        String rearViewImg = ImageUtil.saveImageAndReturnLocation(rearView);
+        String driverRearViewImg = ImageUtil.saveImageAndReturnLocation(driverRearView);
+        String driverFrontViewImg = ImageUtil.saveImageAndReturnLocation(driverFrontView);
 
         RentalExternalInspectionDto rentalExternalInspectionDto = new RentalExternalInspectionDto();
         rentalExternalInspectionDto.setReservation_id(reservation_id);

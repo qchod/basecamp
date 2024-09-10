@@ -244,12 +244,12 @@ public class PartnerCampingCarController {
                                     @RequestParam("driver_front_view") MultipartFile driverFrontView,
                                     Model model) {
 
-        String frontViewImg = rentalShoot(frontView);
-        String passengerFrontViewImg = rentalShoot(passengerFrontView);
-        String passengerRearViewImg = rentalShoot(passengerRearView);
-        String rearViewImg = rentalShoot(rearView);
-        String driverRearViewImg = rentalShoot(driverRearView);
-        String driverFrontViewImg = rentalShoot(driverFrontView);
+        String frontViewImg = ImageUtil.saveImageAndReturnLocation(frontView);
+        String passengerFrontViewImg = ImageUtil.saveImageAndReturnLocation(passengerFrontView);
+        String passengerRearViewImg = ImageUtil.saveImageAndReturnLocation(passengerRearView);
+        String rearViewImg = ImageUtil.saveImageAndReturnLocation(rearView);
+        String driverRearViewImg = ImageUtil.saveImageAndReturnLocation(driverRearView);
+        String driverFrontViewImg = ImageUtil.saveImageAndReturnLocation(driverFrontView);
 
         ReturnExternalInspectionDto returnExternalInspectionDto = new ReturnExternalInspectionDto();
         returnExternalInspectionDto.setReservation_id(reservation_id);
