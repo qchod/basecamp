@@ -57,22 +57,22 @@
                             
                             <div class="row py-2 border-bottom new-fs-85 d-flex align-items-center text-center" th:each="rentalShootData : ${rentalShootList}">
                                 <div class="col d-flex justify-content-center align-items-center text-center p-0">
-                                    <img th:src="|/images/basecampeImage_rentuser/${rentalShootData.front_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
+                                    <img th:src="|/images/${rentalShootData.front_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
                                 </div>
                                 <div class="col d-flex justify-content-center align-items-center text-center p-0">
-                                    <img th:src="|/images/basecampeImage_rentuser/${rentalShootData.passenger_front_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
+                                    <img th:src="|/images/${rentalShootData.passenger_front_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
                                 </div>
                                 <div class="col d-flex justify-content-center align-items-center text-center p-0">
-                                    <img th:src="|/images/basecampeImage_rentuser/${rentalShootData.passenger_rear_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
+                                    <img th:src="|/images/${rentalShootData.passenger_rear_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
                                 </div>
                                 <div class="col d-flex justify-content-center align-items-center text-center p-0">
-                                    <img th:src="|/images/basecampeImage_rentuser/${rentalShootData.rear_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
+                                    <img th:src="|/images/${rentalShootData.rear_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
                                 </div>
                                 <div class="col d-flex justify-content-center align-items-center text-center p-0">
-                                    <img th:src="|/images/basecampeImage_rentuser/${rentalShootData.driver_rear_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
+                                    <img th:src="|/images/${rentalShootData.driver_rear_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
                                 </div>
                                 <div class="col d-flex justify-content-center align-items-center text-center p-0">
-                                    <img th:src="|/images/basecampeImage_rentuser/${rentalShootData.driver_front_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
+                                    <img th:src="|/images/${rentalShootData.driver_front_view}|" class="img-fluid" style="max-width: 150px; height: auto; object-fit: contain;">
                                 </div>
                                 <div class="col-1 d-flex justify-content-center align-items-center text-center p-0">
                                     <a href="/partner/rentalManagement" class="btn btn-bc-outline-dark px-2 new-fs-9">확인</a>
