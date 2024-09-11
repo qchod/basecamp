@@ -94,6 +94,16 @@ public class PartnerCampingCarController {
 
         RentalCompanyDto rentalCompanyDto = (RentalCompanyDto) session.getAttribute("sessionCaravanInfo");
         model.addAttribute("rentalCompanyDto", rentalCompanyDto);
+
+        List<Map<String,Object>> reviewCompany = partnerCampingCarService.reviewManagebyRentCompanyId(rentalCompanyDto.getId());
+        model.addAttribute("reviewCompany", reviewCompany);
+
+        List<Map<String,Object>> rentalManageMetnList = partnerCampingCarService.getRentalManagementList(rentalCompanyDto.getId());
+        model.addAttribute("rentalManageMetnList", rentalManageMetnList);
+
+        List<Map<String,Object>> returnManageList= partnerCampingCarService.returnManagementList(rentalCompanyDto.getId());
+        model.addAttribute("returnManageList", returnManageList);
+
         
         return "partner/partnerDashboard";
     }
