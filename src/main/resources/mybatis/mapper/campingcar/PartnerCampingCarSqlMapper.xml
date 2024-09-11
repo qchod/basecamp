@@ -316,6 +316,7 @@
     INNER JOIN 
                 bc_rental_company_info brci on bc.rental_company_id = brci.id 
     where bc.rental_company_id = #{id}
+    order by br.id DESC
     </select>
     
     <!-- 판매자 : 대여 사진 리스트 -->
@@ -354,6 +355,7 @@
     INNER JOIN 
                 bc_rental_company_info brci on bc.rental_company_id = brci.id 
     where bc.rental_company_id = #{id}
+    order by br.id DESC
     </select>
 
     <!-- 반납시 차량 점검  -->

@@ -8,6 +8,16 @@
             <span class="fw-medium" th:if="${session.sessionCaravanInfo!=null}" th:text="${session.sessionCaravanInfo.comp_nickname}+'님'"></span>
             <span th:unless="${session.sessionCaravanInfo!=null}">비회원</span>
         </div>
+        <div class="col-auto px-2 d-flex align-items-center text-white position-relative">
+            <div class="col d-flex align-items-center position-relative ps-0">
+                <span class="material-symbols-outlined fw-light">
+                    notifications
+                </span>
+                <span class="badge d-flex align-items-center text-bg-danger rounded-circle position-absolute pt-1 px-1" style="padding-bottom: 0.65em; left: 62%;top: -25%;">
+                    <span class="new-fs-65">20</span>
+                </span>
+            </div>
+        </div>
         <form action="/partner/logoutProcess" class="col-auto" th:if="${session.sessionCaravanInfo!=null}">
             <button class="btn btn-outline-light btn-sm fw-bold text-white">로그아웃</button>
         </form>
