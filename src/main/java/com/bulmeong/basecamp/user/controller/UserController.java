@@ -63,12 +63,12 @@ public class UserController {
             String redirectAfterLogin = (String) session.getAttribute("redirectAfterLogin");
             if (redirectAfterLogin != null) {
                 session.removeAttribute("redirectAfterLogin"); // 사용 후 세션에서 제거
-                // return "redirect:https://basecamp.null-pointer-exception.com" + redirectAfterLogin;
-                return "redirect:" + redirectAfterLogin;
+                return "redirect:https://basecamp.null-pointer-exception.com" + redirectAfterLogin;
+                // return "redirect:" + redirectAfterLogin;
             }
 
-            return "redirect:https://basecamp.null-pointer-exception.com";
-            // return "redirect:/";
+            // return "redirect:https://basecamp.null-pointer-exception.com";
+            return "redirect:/";
         }
     }
 
