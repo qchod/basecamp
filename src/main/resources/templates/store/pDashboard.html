@@ -12,6 +12,12 @@
         <link rel="stylesheet" href="/public/css/storeSeller/storeSeller.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <title>Basecamp - Store Center</title>
+
+        <style>
+            .link{
+                cursor: pointer;
+            }
+        </style>
     </head>
     <body style="background-color: #F5F5F5;">
 
@@ -568,11 +574,11 @@
         
                                                 </div>
                                             </div>
-                                            <div class="row pb-2 px-3">
+                                            <!-- <div class="row pb-2 px-3">
                                                 <div class="col p-0 d-grid">
                                                     <button class="bg-white border py-2 f09">정산내역 보기</button>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -742,7 +748,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="row">
-                                                        <div class="col py-3 text-center border-end">
+                                                        <div onclick="changeQnaTab(this)" id="first-qna-button" class="col py-3 text-center border-end link qna-tab">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <span class="material-symbols-outlined f20 fw-light">
@@ -756,7 +762,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col py-3 border-end text-center border-bottom bg-body-tertiary text-body-tertiary">
+                                                        <div onclick="changeQnaTab(this)" id="second-qna-button" class="col py-3 text-center border-end link qna-tab border-bottom bg-body-tertiary text-body-tertiary">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <span class="material-symbols-outlined f20 fw-light">
@@ -766,11 +772,11 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col f08">
-                                                                    상품문의
+                                                                    고객문의
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col py-3 text-center border-bottom bg-body-tertiary text-body-tertiary">
+                                                        <div onclick="changeQnaTab(this)" id="third-qna-button" class="col py-3 text-center link qna-tab border-bottom bg-body-tertiary text-body-tertiary">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <span class="material-symbols-outlined f20 fw-light">
@@ -797,18 +803,22 @@
                                                             </div>
                                                             <div class="row text-center">
                                                                 <div class="col f09">
-                                                                    미답변 상품 문의가 없습니다.
+                                                                    미답변 
+                                                                    <span id="first-qna">상품 문의가</span>
+                                                                    <span id="second-qna" class="d-none">고객 문의가</span>
+                                                                    <span id="third-qna" class="d-none">판매자톡이</span>
+                                                                     없습니다.
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row py-3">
+                                                    <!-- <div class="row py-3">
                                                         <div class="col d-grid">
                                                             <button class="border bg-white f09 py-2">
                                                                 문의 관리
                                                             </button>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -817,7 +827,7 @@
         
                                 <div class="col-6">
                                     <div class="row ps-2">
-                                        <div class="col bg-white border" style="height: 411.92px;">
+                                        <div class="col bg-white border" style="height: 411.92px; white-space: nowrap;">
                                             <div class="row px-3 py-3 fw-semibold border-bottom">
                                                 <div class="col p-0">
                                                     공지사항
@@ -904,7 +914,7 @@
                                                         </div>
                                                     </div>
                                                     
-                                                    <div class="row pt-2 align-items-center">
+                                                    <!-- <div class="row pt-2 align-items-center">
                                                         <div class="col pe-0 d-flex align-items-center">
                                                             <span class="text-body-secondary px-1 f08 border border-secondary">
                                                                 일반
@@ -916,7 +926,7 @@
                                                         <div class="col-auto f09 text-body-secondary">
                                                             08.07
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -1072,13 +1082,13 @@
                                             <div class="row px-3 py-3">
                                                 <canvas id="reviewChart" width="200" height="40"></canvas>
                                             </div>
-                                            <div class="row">
+                                            <a href="/storeCenter/manageReview" class="row">
                                                 <div class="col d-grid">
                                                     <button class="border bg-white f09 py-2">
                                                         전체 리뷰 보기
                                                     </button>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
 
                                     </div>
@@ -1196,7 +1206,37 @@
                 setSessionId();
             })
 
+            function changeQnaTab(e){
+                const  qnas = document.querySelectorAll(".qna-tab")
+                
+                for(qna of qnas){
+                    qna.classList.add("border-bottom")
+                    qna.classList.add("text-body-tertiary")
+                    qna.classList.add("bg-body-tertiary")
+                }
 
+                e.classList.remove("border-bottom")
+                e.classList.remove("text-body-tertiary")
+                e.classList.remove("bg-body-tertiary")
+
+                const first = document.getElementById("first-qna")
+                const second = document.getElementById("second-qna")
+                const third = document.getElementById("third-qna")
+
+                if(e.id=="first-qna-button"){
+                    first.classList.remove("d-none")
+                    second.classList.add("d-none")
+                    third.classList.add("d-none")
+                }else if(e.id=="second-qna-button"){
+                    first.classList.add("d-none")
+                    second.classList.remove("d-none")
+                    third.classList.add("d-none")
+                }else{
+                    first.classList.add("d-none")
+                    second.classList.add("d-none")
+                    third.classList.remove("d-none")
+                }
+            }
             
             const DATA_COUNT = 30;
             const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
@@ -1279,28 +1319,28 @@
                     datasets: [
                         {
                             label: '5점',
-                            data: [40], // 각 데이터 항목에 대한 값 설정
+                            data: [54], // 각 데이터 항목에 대한 값 설정
                             backgroundColor: '#0F0C2E',
                             borderWidth: 0,
                             barThickness: 15
                         },
                         {
                             label: '4점',
-                            data: [25],
+                            data: [18],
                             backgroundColor: '#3D7177',
                             borderWidth: 0,
                             barThickness: 15
                         },
                         {
                             label: '3점',
-                            data: [20],
+                            data: [18],
                             backgroundColor: '#709FBF',
                             borderWidth: 0,
                             barThickness: 15
                         },
                         {
                             label: '2점',
-                            data: [10],
+                            data: [5],
                             backgroundColor: '#A4D5F6',
                             borderWidth: 0,
                             barThickness: 15
