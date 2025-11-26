@@ -31,10 +31,10 @@
 
 </head>
 <body>
-    
+
     <!-- 탑네비 부분 -->
     <div class="container bg-body-tertiary" style="padding-top: 60.792px;">
-    
+
         <div class="fixed-top row border-bottom py-3 shadow-sm bg-white">
             <div id="backButton" class="col ps-4 align-items-center d-flex ps-0" style="cursor: pointer;">
                 <span class="material-symbols-outlined fw-light">arrow_back</span>
@@ -45,7 +45,7 @@
             </a>
         </div>
 
-        
+
 
 
     <!-- 프로필 -->
@@ -64,7 +64,7 @@
                         </span>
                     </div> -->
                 </div>
-            
+
                 <div class="row px-2 bg-white">
                     <a href="/user/pointLog" class="col border rounded p-2 me-2">
                         <div class="row">
@@ -93,16 +93,16 @@
                         </div>
                     </a>
                 </div>
-                
+
                 <div class="row">
                     <div class="col">
 
                         <div class="row">
                             <div class="col">
-                                
+
                                 <div class="row bg-white pt-4 pb-3">
                                     <div class="col fw-medium">
-                                        캠핑장 예약
+                                        캠핑장
                                     </div>
                                 </div>
                                 <div class="row bg-white pb-2">
@@ -112,26 +112,28 @@
                                                 예약내역
                                             </div>
                                         </a>
+                                        <!--
                                         <div class="row pb-2">
                                             <div class="col">
                                                 리뷰작성
                                             </div>
                                         </div>
-                                 
+                                        -->
                                     </div>
                                 </div>
 
                             </div>
                         </div>
 
-                        <div class="row bg-white mt-2 py-1">
+                        <a href="/campingcar/main" class="row bg-white mt-2 py-1">
                             <div class="col">
-                                
+
                                 <div class="row bg-white py-3">
                                     <div class="col fw-medium">
                                         캠핑카 예약
                                     </div>
                                 </div>
+                                <!--
                                 <div class="row bg-white pb-2">
                                     <div class="col">
                                         <div class="row pb-2">
@@ -144,16 +146,16 @@
                                                 위시리스트
                                             </div>
                                         </div>
-                                 
+
                                     </div>
                                 </div>
-
+                                -->
                             </div>
-                        </div>
+                        </a>
 
                         <div class="row">
                             <div class="col">
-                                
+
                                 <div class="row bg-white mt-2 py-3">
                                     <div class="col fw-medium">
                                         쇼핑몰
@@ -183,7 +185,7 @@
                                         </a>
                                         <!-- <a href="/store/myOrderList" class="row pb-3">
                                             <div class="col">
-                                                위시리시트
+                                                위시리스트
                                             </div>
                                         </a> -->
                                     </div>
@@ -192,22 +194,21 @@
                             </div>
                         </div>
 
-                        <div class="row bg-white mt-2">
+                        <a href="/secondhandProduct/myPage" class="row bg-white mt-2">
                             <div class="col">
-                                
+
                                 <div class="row bg-white py-3">
                                     <div class="col fw-medium">
                                         중고마켓
                                     </div>
                                 </div>
-                           
 
                             </div>
-                        </div>
+                        </a>
 
                         <div class="row bg-white mt-2 py-2">
                             <div class="col">
-                                
+
                                 <div class="row bg-white py-3">
                                     <div class="col fw-medium">
                                         소모임
@@ -229,6 +230,7 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        <!--
                                         <div class="row pb-2">
                                             <div class="col">
                                                 나의 정기모임
@@ -244,26 +246,24 @@
                                                 내가 작성한 댓글
                                             </div>
                                         </div>
-                                 
+                                        -->
                                     </div>
                                 </div>
 
                             </div>
                         </div>
 
-                        <div class="row bg-white mt-2 py-2">
+                        <a href="/insta/instaMainPage" class="row bg-white mt-2 py-2">
                             <div class="col">
-                                
+
                                 <div class="row py-2">
                                     <div class="col fw-medium">
                                         캠프스타그램
                                     </div>
                                 </div>
-                           
+
                             </div>
-                        </div>
-
-
+                        </a>
 
 
                     </div>
@@ -272,18 +272,18 @@
             </div>
         </div>
     </div>
-    
+
 <!--메뉴 offcanvas 하단네비 -->
 <div th:fragment="bottomNaviBasecamp" class="container-fluid g-0 border-top bg-white fixed-bottom pb-3">
     <div class="row mx-1 py-2 text-center">
-        
+
         <!--HOME-->
         <a href="/" class="col icon-and-text">
             <span class="material-symbols-outlined fw-light" style="font-size: 1.8em; color: darkgray;">
                 home
             </span>
             <span class="text-navi pt-1" style="font-size: 0.7em; color: darkgray">홈</span>
-        </a>        
+        </a>
 
         <!-- 구매 -->
         <div class="col icon-and-text dropdown dropup">
@@ -374,7 +374,7 @@
                 </a>
             </ul>
         </div>
-        
+
         <!--canvas 버튼-->
         <div class="col">
             <button class="btn py-0" style="line-height: 20px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
@@ -510,7 +510,7 @@
                             <div class="col ps-0">
                                 <span>소모임</span>
                             </div>
-                        </a>                        
+                        </a>
                     </div>
                 </div>
 
@@ -597,7 +597,7 @@
 </div>
 <!-- offcanvas 끝 -->
 
- 
+
 
 <!-- 네비가 추가됨 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
