@@ -47,7 +47,7 @@ public class UserController {
     public String signProcess(@ModelAttribute UserDto userDto) {
         
         userService.insertUser(userDto);
-        return "redirect:https://basecamp.null-pointer-exception.com/user/login";
+        return "redirect:https://basecamp.bcyeon.click/user/login";
     }
 
     @PostMapping("loginProcess")
@@ -63,11 +63,11 @@ public class UserController {
             String redirectAfterLogin = (String) session.getAttribute("redirectAfterLogin");
             if (redirectAfterLogin != null) {
                 session.removeAttribute("redirectAfterLogin"); // 사용 후 세션에서 제거
-                return "redirect:https://basecamp.null-pointer-exception.com" + redirectAfterLogin;
+                return "redirect:https://basecamp.bcyeon.click" + redirectAfterLogin;
                 // return "redirect:" + redirectAfterLogin;
             }
 
-            // return "redirect:https://basecamp.null-pointer-exception.com";
+            // return "redirect:https://basecamp.bcyeon.click";
             return "redirect:/";
         }
     }
@@ -75,9 +75,9 @@ public class UserController {
     @GetMapping("logoutProcess")
     public String logoutProcess(HttpSession session) {
         if(utils.getSession("sessionUserInfo") ==null)
-            return "redirect:https://basecamp.null-pointer-exception.com/user/login";
+            return "redirect:https://basecamp.bcyeon.click/user/login";
         session.invalidate();
-        return "redirect:https://basecamp.null-pointer-exception.com";
+        return "redirect:https://basecamp.bcyeon.click";
     }
 
     @RequestMapping("coupon")

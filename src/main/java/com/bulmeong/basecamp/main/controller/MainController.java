@@ -90,7 +90,7 @@ public class MainController {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
 		params.add("client_id", "111ec870310ec7e3890df38c0637862b");
-		params.add("redirect_uri", "https://basecamp.null-pointer-exception.com/auth/kakao/callback");
+		params.add("redirect_uri", "https://basecamp.bcyeon.click/auth/kakao/callback");
 		params.add("code", code);
 
         HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = new HttpEntity<>(params, headers);
@@ -143,11 +143,11 @@ public class MainController {
 
             if(userService.isExistAccount(id)){
                 session.setAttribute("sessionUserInfo", userService.getUserByAccountAndPassword(userDto));
-                return "redirect:https://basecamp.null-pointer-exception.com";
+                return "redirect:https://basecamp.bcyeon.click";
             }else{
                 userService.registerKakaoUser(userDto);
                 session.setAttribute("sessionUserInfo", userService.getUserByAccountAndPassword(userDto));
-                return "redirect:https://basecamp.null-pointer-exception.com";
+                return "redirect:https://basecamp.bcyeon.click";
             }
         } catch (JsonMappingException e) {
             e.printStackTrace();
@@ -155,7 +155,7 @@ public class MainController {
             e.printStackTrace();
         }
 
-        return "redirect:https://basecamp.null-pointer-exception.com";
+        return "redirect:https://basecamp.bcyeon.click";
     }
 
 }

@@ -62,6 +62,6 @@ public class StoreOrderController {
             session.removeAttribute("storeOrderDto");
         }
         
-        return "redirect:https://basecamp.null-pointer-exception.com/store/orderComplete?id="+order_id;
+        return "redirect:https://basecamp.bcyeon.click/store/orderComplete?id="+order_id;
     }
 }

@@ -1,6 +1,7 @@
 package com.bulmeong.basecamp.seller.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,8 @@ import java.util.Map;
 
 @Service
 public class KakaoPayService {
+    @Value("${api.key}")
+    private String apiKey;
 
     @Autowired
     private CampsiteSqlMapper campsiteMapper;
@@ -25,7 +28,7 @@ public class KakaoPayService {
     public ReadyResponse readyPayment(StoreOrderDto storeOrderDto){
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization","SECRET_KEY DEV730F951F604BE30F5361EEAF5AA85EB506E1F");
+        headers.set("Authorization","SECRET_KEY " + apiKey);
         headers.set("Content-Type", "application/json");
 
         Map<String, Object> requestBody = new HashMap<>();
@@ -36,9 +39,9 @@ public class KakaoPayService {
         requestBody.put("quantity", "1");
         requestBody.put("total_amount", storeOrderDto.getPayment_amount());
         requestBody.put("tax_free_amount", "0");
-        requestBody.put("approval_url", "https://basecamp.null-pointer-exception.com/order/pay/completed");
-        requestBody.put("fail_url", "https://basecamp.null-pointer-exception.com/store");
-        requestBody.put("cancel_url", "https://basecamp.null-pointer-exception.com/store");
+        requestBody.put("approval_url", "https://basecamp.bcyeon.click/order/pay/completed");
+        requestBody.put("fail_url", "https://basecamp.bcyeon.click/store");
+        requestBody.put("cancel_url", "https://basecamp.bcyeon.click/store");
 
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
 
@@ -53,7 +56,7 @@ public class KakaoPayService {
 
     public ReadyResponse readyPayment(CampsiteOrderDto orderDto){
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization","SECRET_KEY DEV730F951F604BE30F5361EEAF5AA85EB506E1F");
+        headers.set("Authorization","SECRET_KEY " + apiKey);
         headers.set("Content-Type", "application/json");
 
         Map<String, Object> requestBody = new HashMap<>();
@@ -65,9 +68,9 @@ public class KakaoPayService {
         requestBody.put("quantity", "1");
         requestBody.put("total_amount", orderDto.getTotal_prise());
         requestBody.put("tax_free_amount", "0");
-        requestBody.put("approval_url", "https://basecamp.null-pointer-exception.com/camp/pay/completed");
-        requestBody.put("fail_url", "https://basecamp.null-pointer-exception.com/camp");
-        requestBody.put("cancel_url", "https://basecamp.null-pointer-exception.com/camp");
+        requestBody.put("approval_url", "https://basecamp.bcyeon.click/camp/pay/completed");
+        requestBody.put("fail_url", "https://basecamp.bcyeon.click/camp");
+        requestBody.put("cancel_url", "https://basecamp.bcyeon.click/camp");
 
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
 
@@ -83,7 +86,7 @@ public class KakaoPayService {
     public ApproveResponse payApprove(String tid, String pgToken, int order_id, int user_id) {
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "SECRET_KEY DEV730F951F604BE30F5361EEAF5AA85EB506E1F");
+        headers.set("Authorization", "SECRET_KEY " + apiKey);
         headers.set("Content-Type", "application/json");
 
         Map<String, Object> parameters = new HashMap<>();

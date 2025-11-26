@@ -188,7 +188,7 @@ public class ClubController {
         joinConditionDto.setGender(clubJoinConditionDto.getGender());
         clubService.insertClubJoinCondition(joinConditionDto);
 
-        return "redirect:https://basecamp.null-pointer-exception.com/club/main";
+        return "redirect:https://basecamp.bcyeon.click/club/main";
     }
 
     // 소모임 회원가입
@@ -208,7 +208,7 @@ public class ClubController {
         clubMemberDtoForRoleId3.setRole_id(3);
         clubService.joinClub(clubMemberDtoForRoleId3);
        
-        return "redirect:https://basecamp.null-pointer-exception.com/club/home?id=" + id;
+        return "redirect:https://basecamp.bcyeon.click/club/home?id=" + id;
     }
 
 
@@ -230,7 +230,7 @@ public class ClubController {
 
         clubService.writeClubPost(clubPostDto, imgList);
 
-        return "redirect:https://basecamp.null-pointer-exception.com/club/board?id=" + clubPostDto.getClub_id();
+        return "redirect:https://basecamp.bcyeon.click/club/board?id=" + clubPostDto.getClub_id();
     }
 
     
@@ -307,7 +307,7 @@ public class ClubController {
     public String writeComment(ClubPostCommentDto clubPostCommentDto){
         clubService.writeClubPostComment(clubPostCommentDto);
     
-        return "redirect:https://basecamp.null-pointer-exception.com/club/readPost?id="+ clubPostCommentDto.getPost_id();
+        return "redirect:https://basecamp.bcyeon.click/club/readPost?id="+ clubPostCommentDto.getPost_id();
     }
 
     @RequestMapping("newClubs")
@@ -369,7 +369,7 @@ public class ClubController {
         }else{
             clubService.delteBookmarkDto(clubBookmarkDto);
         }
-        return "redirect:https://basecamp.null-pointer-exception.com/club/home?id="+ clubBookmarkDto.getClub_id();
+        return "redirect:https://basecamp.bcyeon.click/club/home?id="+ clubBookmarkDto.getClub_id();
     }
 
     @RequestMapping("postLikeProcess")
@@ -385,7 +385,7 @@ public class ClubController {
             clubService.deletePostLike(clubPostLikeDto);
         }
         
-        return "redirect:https://basecamp.null-pointer-exception.com/club/readPost?id=" + clubPostLikeDto.getPost_id();
+        return "redirect:https://basecamp.bcyeon.click/club/readPost?id=" + clubPostLikeDto.getPost_id();
         
     }
 
@@ -414,7 +414,7 @@ public class ClubController {
 
         ClubDto clubDto = clubService.selectClubDtoById(clubMeetingDto.getClub_id());
         model.addAttribute("clubDto", clubDto);
-        return "redirect:https://basecamp.null-pointer-exception.com/club/home?id="+clubMeetingDto.getClub_id();
+        return "redirect:https://basecamp.bcyeon.click/club/home?id="+clubMeetingDto.getClub_id();
     }
 
     // 정모 신청
@@ -423,7 +423,7 @@ public class ClubController {
         clubService.joinMeeting(clubMeetingMemberDto);
         
 
-        return "redirect:https://basecamp.null-pointer-exception.com/club/home?id=";
+        return "redirect:https://basecamp.bcyeon.click/club/home?id=";
     }
 
     // 소모일 관리

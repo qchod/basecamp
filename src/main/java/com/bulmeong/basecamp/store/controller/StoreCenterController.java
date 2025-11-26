@@ -24,7 +24,7 @@ public class StoreCenterController {
     public String logoutProcess(HttpSession session){
         session.invalidate();
 
-        return "redirect:https://basecamp.null-pointer-exception.com/seller/login";
+        return "redirect:https://basecamp.bcyeon.click/seller/login";
     }
 
     @RequestMapping("storeRegister")
@@ -37,7 +37,7 @@ public class StoreCenterController {
 
         storeService.registerStore(storeDto, storeDeliveryInfoDto, storeBankAccountDto);
 
-        return "redirect:https://basecamp.null-pointer-exception.com/seller/registerComplete";
+        return "redirect:https://basecamp.bcyeon.click/seller/registerComplete";
     }
 
     @RequestMapping("dashboard")
@@ -67,7 +67,7 @@ public class StoreCenterController {
 
             return "store/pSellerInfo";
         }else{
-            return "redirect:https://basecamp.null-pointer-exception.com/seller/login";
+            return "redirect:https://basecamp.bcyeon.click/seller/login";
         }
         
     }
@@ -90,7 +90,7 @@ public class StoreCenterController {
         int store_id = storeService.getStoreIdByStoreOrderId(id);
 
         if(storeDto==null||storeDto.getId() != store_id){
-            return "redirect:https://basecamp.null-pointer-exception.com/store"; //여기 먼가 잘못된 접근입니다 머 그런 느낌 페이지
+            return "redirect:https://basecamp.bcyeon.click/store"; //여기 먼가 잘못된 접근입니다 머 그런 느낌 페이지
         }
         model.addAttribute("orderProductData", storeService.getOrderProductData(id));
 

@@ -33,12 +33,12 @@ public class SellerController {
     @RequestMapping("sellerType")
     public String sellerType(@RequestParam("selectOption") String selectOption){
         if(selectOption.equals("camp")){
-            return "redirect:https://basecamp.null-pointer-exception.com/campsiteCenter/registerUser";
+            return "redirect:https://basecamp.bcyeon.click/campsiteCenter/registerUser";
         }else if(selectOption.equals("store")){
-            return "redirect:https://basecamp.null-pointer-exception.com/storeCenter/storeRegister";
+            return "redirect:https://basecamp.bcyeon.click/storeCenter/storeRegister";
         }else{
             //여기 수정(캠핑카)
-            return "redirect:https://basecamp.null-pointer-exception.com/partner/nfRegisterPage";
+            return "redirect:https://basecamp.bcyeon.click/partner/nfRegisterPage";
         }
     }
 
@@ -63,19 +63,19 @@ public class SellerController {
             StoreDto storeDto = storeService.getStoreDtoByAccountInfo(account_id, account_pw);
             session.setAttribute("sessionStoreInfo", storeDto);
     
-            return "redirect:https://basecamp.null-pointer-exception.com/storeCenter/dashboard";
+            return "redirect:https://basecamp.bcyeon.click/storeCenter/dashboard";
         }else if(seller_type.equals("Campsite")){
             //여기 수정(캠핑장)
             CampsiteDto campsiteDto = campsiteService.getCampsiteDtoByAccountInfo(account_id, account_pw);
             session.setAttribute("campsite", campsiteService.campsiteInfo(campsiteDto.getId()));
             session.setAttribute("category", campsiteService.categories());
-            return "redirect:https://basecamp.null-pointer-exception.com/campsiteCenter/main";
+            return "redirect:https://basecamp.bcyeon.click/campsiteCenter/main";
         }else{
             //여기 수정(캠핑카)
             RentalCompanyDto rentalCompanyDto = partnerCampingCarService.getSellerByIdAndPw(account_id, account_pw);
             session.setAttribute("sessionCaravanInfo", rentalCompanyDto);
     
-            return "redirect:https://basecamp.null-pointer-exception.com/partner/partnerDashboard";
+            return "redirect:https://basecamp.bcyeon.click/partner/partnerDashboard";
         }
     }
 }

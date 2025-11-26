@@ -64,19 +64,19 @@ public class PartnerCampingCarController {
         
         partnerCampingCarService.registerSeller(rentalCompanyDto);
 
-        return "redirect:https://basecamp.null-pointer-exception.com/seller/login";
+        return "redirect:https://basecamp.bcyeon.click/seller/login";
     }
     // 판매자 로그인 
     @RequestMapping("loginProcess")
     public String loginProcess() {
 
-        return "redirect:https://basecamp.null-pointer-exception.com/seller/login";
+        return "redirect:https://basecamp.bcyeon.click/seller/login";
     }
     // 판매자 로그아웃 
     @RequestMapping("logoutProcess")
     public String logoutProcess(HttpSession session) {
         session.invalidate();
-        return "redirect:https://basecamp.null-pointer-exception.com/seller/login";
+        return "redirect:https://basecamp.bcyeon.click/seller/login";
     }
     // 판매자페이지 main
     // @RequestMapping("main")
@@ -148,7 +148,7 @@ public class PartnerCampingCarController {
 
         partnerCampingCarService.registerCamping(campingcarDto,basicFacilites_id,detailedImg,rentalPeakPriceDto);
         System.out.println("차량등록 : " +campingcarDto+basicFacilites_id+detailedImg+rentalPeakPriceDto);
-        return "redirect:https://basecamp.null-pointer-exception.com/partner/carRegister";
+        return "redirect:https://basecamp.bcyeon.click/partner/carRegister";
     }
     
     @RequestMapping("carManagement") 
@@ -177,7 +177,7 @@ public class PartnerCampingCarController {
     
         partnerCampingCarService.updateReservationProgress(reservationDto);
     
-        return "redirect:https://basecamp.null-pointer-exception.com/partner/bookReservation";
+        return "redirect:https://basecamp.bcyeon.click/partner/bookReservation";
     }
 
     @RequestMapping("reviewManage")
@@ -197,7 +197,7 @@ public class PartnerCampingCarController {
         
         partnerCampingCarService.updateReviewReply(params);
 
-        return "redirect:https://basecamp.null-pointer-exception.com/partner/reviewManage";
+        return "redirect:https://basecamp.bcyeon.click/partner/reviewManage";
     }
 
     @RequestMapping("rentalManagement")
@@ -274,7 +274,7 @@ public class PartnerCampingCarController {
         System.out.println("반납 이미지 업로드 확인 "+ returnExternalInspectionDto);
 
         model.addAttribute("message", "파일이 성공적으로 업로드되었습니다.");
-    return "redirect:https://basecamp.null-pointer-exception.com/partner/returnManagement";
+    return "redirect:https://basecamp.bcyeon.click/partner/returnManagement";
     }
 
     // 차량 반납 이미지 업로드를 위한 이미지 메소드

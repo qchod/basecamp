@@ -66,10 +66,10 @@ public class InstaController {
 
         if(userC == 1){
             // return "redirect:./instaMainPage?user_id=" + userDto.getId();
-            return "redirect:https://basecamp.null-pointer-exception.com/insta/instaMainPage?user_id=" + userDto.getId();
+            return "redirect:https://basecamp.bcyeon.click/insta/instaMainPage?user_id=" + userDto.getId();
         }else{
             // return "redirect:./instaConfirmPage";
-            return "redirect:https://basecamp.null-pointer-exception.com/insta/instaConfirmPage";
+            return "redirect:https://basecamp.bcyeon.click/insta/instaConfirmPage";
         }
 
     }
@@ -117,7 +117,7 @@ public class InstaController {
         
         // return "insta/confirmProcess";
         // return "redirect:./instaMainPage?user_id=" + instaUserInfoDto.getUser_id();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaMainPage?user_id=" + instaUserInfoDto.getUser_id();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaMainPage?user_id=" + instaUserInfoDto.getUser_id();
     }
 
     // 인스타 메인페이지
@@ -151,13 +151,13 @@ public class InstaController {
             }else{ // 인스타에 프로필 등록 안 된 유저
 
                 // return "redirect:./instaConfirmPage";
-                return "redirect:https://basecamp.null-pointer-exception.com/insta/instaConfirmPage";
+                return "redirect:https://basecamp.bcyeon.click/insta/instaConfirmPage";
             }
             
         }else{ // 로그인 안 된 상태
 
             // return "redirect:./user/login";
-            return "redirect:https://basecamp.null-pointer-exception.com/user/login";
+            return "redirect:https://basecamp.bcyeon.click/user/login";
         }
         
     }
@@ -170,7 +170,7 @@ public class InstaController {
         instaService.like(instaArticleLikeDto);
 
         // return "redirect:./instaMainPage?user_id=" + userDto.getId();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaMainPage?user_id=" + userDto.getId();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaMainPage?user_id=" + userDto.getId();
     }
 
     @RequestMapping("pushArticleLikeDeleteProcess")
@@ -180,7 +180,7 @@ public class InstaController {
         instaService.unLike(instaArticleLikeDto);
 
         // return "redirect:./instaMainPage?user_id=" + userDto.getId();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaMainPage?user_id=" + userDto.getId();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaMainPage?user_id=" + userDto.getId();
     }
 
     @RequestMapping("instaWritePage")
@@ -260,7 +260,7 @@ public class InstaController {
         instaService.writeArticleImg(instaAtricleImgDtoList);
 
         // return "redirect:./instaMainPage?user_id=" + instaUserInfoDto.getUser_id();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaMainPage?user_id=" + instaUserInfoDto.getUser_id();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaMainPage?user_id=" + instaUserInfoDto.getUser_id();
     }
 
     @RequestMapping("commentWritePage")
@@ -337,7 +337,7 @@ public class InstaController {
         instaService.insertBookmark(instaBookmarkDto);
 
         // return "redirect:./instaMainPage?user_id=" + userDto.getId();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaMainPage?user_id=" + userDto.getId();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaMainPage?user_id=" + userDto.getId();
     }
 
     @RequestMapping("pushBookmarkDeleteProcess")
@@ -347,7 +347,7 @@ public class InstaController {
         instaService.deleteBookmark(instaBookmarkDto);
         
         // return "redirect:./instaMainPage?user_id=" + userDto.getId();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaMainPage?user_id=" + userDto.getId();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaMainPage?user_id=" + userDto.getId();
     }
     
     @RequestMapping("instaUserPage")
@@ -413,7 +413,7 @@ public class InstaController {
         instaService.deleteArticle(id);
 
         // return "redirect:./instaMainPage?user_id=" + user_id;
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaMainPage?user_id=" + user_id;
+        return "redirect:https://basecamp.bcyeon.click/insta/instaMainPage?user_id=" + user_id;
     }
 
     // 검색 페이지
@@ -441,7 +441,7 @@ public class InstaController {
         
 
         // return "redirect:./instaSearchResultPage?searchWord=" + encodedContent + "&user_id=" + user_id;
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaSearchResultPage?searchWord=" + encodedContent + "&user_id=" + user_id;
+        return "redirect:https://basecamp.bcyeon.click/insta/instaSearchResultPage?searchWord=" + encodedContent + "&user_id=" + user_id;
     }
 
     // 검색 결과 페이지 _ 일반 검색과 해시태그 검색 두가지로 분기
@@ -529,7 +529,7 @@ public class InstaController {
         instaService.recentSearchDeleteContent(content, instaUserInfoDto.getId());
 
         // return "redirect:./instaSearchPage?user_id=" + instaUserInfoDto.getId();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaSearchPage?user_id=" + instaUserInfoDto.getId();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaSearchPage?user_id=" + instaUserInfoDto.getId();
     }
 
     // 태그 id로 태그 검색 삭제
@@ -540,7 +540,7 @@ public class InstaController {
         instaService.recentSearchDeleteTag(tag_id, instaUserInfoDto.getId());
 
         // return "redirect:./instaSearchPage?user_id=" + instaUserInfoDto.getId();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaSearchPage?user_id=" + instaUserInfoDto.getId();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaSearchPage?user_id=" + instaUserInfoDto.getId();
     }
 
     // 검색 기록 전체 삭제
@@ -551,7 +551,7 @@ public class InstaController {
         instaService.recentSearchAllDelete(instaUserInfoDto.getId());
 
         // return "redirect:./instaSearchPage?user_id=" + instaUserInfoDto.getId();
-        return "redirect:https://basecamp.null-pointer-exception.com/insta/instaSearchPage?user_id=" + instaUserInfoDto.getId();
+        return "redirect:https://basecamp.bcyeon.click/insta/instaSearchPage?user_id=" + instaUserInfoDto.getId();
     }
 
     // 인사이트 _ 통계

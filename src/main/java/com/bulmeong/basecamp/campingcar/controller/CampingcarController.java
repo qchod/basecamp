@@ -65,7 +65,7 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
 
     // sessionUserInfo가 null이면 로그인 페이지로 리다이렉트
     if (sessionUserInfo == null) {
-        return "redirect:https://basecamp.null-pointer-exception.com/user/login";  // 로그인 페이지로 리다이렉트
+        return "redirect:https://basecamp.bcyeon.click/user/login";  // 로그인 페이지로 리다이렉트
     }
 
     // 유저가 로그인한 경우 rentUserPk 조회 (null일 수 있음)
@@ -260,7 +260,7 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
 
         campingcarService.registerReview(review);
 
-        return "redirect:https://basecamp.null-pointer-exception.com/campingcar/main";
+        return "redirect:https://basecamp.bcyeon.click/campingcar/main";
     }
 
     // 차량확인 사진찍기 페이지
@@ -305,7 +305,7 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
         System.out.println("외관촬영 등록 확인 : " + rentalExternalInspectionDto);
 
         model.addAttribute("message", "파일이 성공적으로 업로드되었습니다.");
-    return "redirect:https://basecamp.null-pointer-exception.com/campingcar/rentalCarCheck?id="+ reservation_id;
+    return "redirect:https://basecamp.bcyeon.click/campingcar/rentalCarCheck?id="+ reservation_id;
     }
 
     // 차량 대여 사진찍기를 위한 이미지 메소드
@@ -355,7 +355,7 @@ public String campingCarDetailPage(@RequestParam("id") int id, Model model, Http
         campingcarService.reservationApproved(reservationDto);
         System.out.println("id확인 " + reservationDto.getId());
     
-        return "redirect:https://basecamp.null-pointer-exception.com/campingcar/rentalCarCheck?id="+reservationDto.getId();
+        return "redirect:https://basecamp.bcyeon.click/campingcar/rentalCarCheck?id="+reservationDto.getId();
     }
 
     // 차량 반납 점검 동의 페이지
